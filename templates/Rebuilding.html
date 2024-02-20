@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>立て替え</title>
+	</head>
+
+    <style>
+        .example{
+            font-size: 100%;
+            width: 100px;
+        }
+        .example1{
+            font-size: 170%;
+        }
+        .example2{
+            display: flex;
+            align-items: flex-start;
+        }
+        .sousin{
+            font-size: 150%;
+        }
+        .back{
+            font-size: 300%;
+            text-align: rigth;
+        }
+        .select{
+            font-size: 100%;
+            width: 150px;
+        }
+        .textbox{
+            font-size: 100%;
+            width: 300px;
+        }
+        .table{
+            font-size: 200%;
+        }
+        .del{
+            font-size: 200%;
+        }
+    </style>
+    <body>    
+        <form method='POST'>
+            <P class="example1">立て替え人:
+                <select name="tatekae" class="select">
+                    <option value="ginji">款次</option>
+                    <option value="daiki">大輝</option>
+                    <option value="riki">理暉</option>
+                    <option value="miyu">未夢</option>
+                    <option value="hikaru">輝</option>
+                    <option value="kana">佳奈</option>
+                    <option value="ryuya">龍也</option>
+                    <option value="kai">海</option>
+                    <option value="del">一部削除</option>
+                    <option value="cancel">オールキャンセル</option>
+                </select>
+            </p>
+            <div class="example1">
+                <input type="checkbox" name="ginji" value="ginji" id="ginji">
+                <label for="ginji">款次</label>
+                <input type="checkbox" name="daiki" value="daiki" id="daiki">
+                <label for="daiki">大輝</label>
+                <input type="checkbox" name="riki" value="riki" id="riki">
+                <label for="riki">理暉</label>
+                <input type="checkbox" name="miyu" value="miyu" id="miyu">
+                <label for="miyu">未夢</label>
+                <input type="checkbox" name="hikaru" value="hikaru" id="hikaru">
+                <label for="hikaru">輝</label>
+                <input type="checkbox" name="kana" value="kana" id="kana">
+                <label for="kana">佳奈</label>
+                <input type="checkbox" name="ryuya" value="ryuya" id="ryuya">
+                <label for="ryuya">龍也</label>
+                <input type="checkbox" name="kai" value="kai" id="kai">
+                <label for="kai">海</label>
+            </div>
+            <P class="example1">項目:
+                <select name="kinds" class="select">
+                    <option value="飛行機">飛行機</option>
+                    <option value="宿泊">宿泊</option>
+                    <option value="レンタカー">レンタカー</option>
+                    <option value="スキー">スキー</option>
+                    <option value="飲み代">飲み代</option>
+                    <option value="sonota">その他</option>
+                </select>
+                <input type="text" name="sonota" id="sonota" class="textbox" placeholder="その他の場合入力">
+            </p>
+                <P class="example1">金額:
+                <input type="text" name="kingaku" id="kingaku" class="example" inputmode="decimal">円
+            </p>
+            <input type="submit" value="送信" class="sousin">
+            {% if allpay and hitori and tatekae and num and menber%}
+            <table align="center" class="table" border="1">
+                <tr>
+                    <th align="center"></th>
+                    <th align="center">立て替え人</th>
+                    <th align="center">種類</th>
+                    <th align="center">金額</th>
+                    <th align="center">1人当たり</th>
+                </tr>
+            {% for i in range(num) %}
+            <tr>
+                <td align="center">{{i}}</td>
+                <td align="center">{{menber[0][i]}}</td>
+                <td align="center">{{tatekae[0][i]}}</td>
+                <td align="center">￥{{allpay[0][i]}}</td>
+                <td align="center">￥{{hitori[0][i]}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+            <p align="center" class="del">削除:
+                <select name="del" class="select">
+            {% for i in range(num) %}
+                <option value={{i}}>{{i}}</option>
+            {% endfor %}
+            </select>
+            </p>
+            {% else %}
+            <p>{{error}}<p>
+            {% endif %}
+        </form>
+        <a href='/' onClick="keikoku()" class="back">戻る<br></a>
+    </body>
+</html>

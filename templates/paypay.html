@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日程</title>
+	</head>
+    <style>
+        .example{
+            font-size: 100%;
+            }
+        .example1{
+            font-size: 300%;
+        }
+        .sousin{
+            font-size: 300%;
+        }
+        .back{
+            font-size: 300%;
+            text-align: rigth;
+        }
+        .table{
+            font-size: 300%;
+            width: 400px;
+        }
+        .table1{
+            width: 200px;
+        }
+        .table2{
+            width: 200px;
+        }
+    </style>
+    <body>
+        <form method='POST'>
+            <P class="example1">メンバー:
+                <select name="menber" class="example">
+                    <option value="ginji">款次</option>
+                    <option value="daiki">大輝</option>
+                    <option value="riki">理暉</option>
+                    <option value="miyu">未夢</option>
+                    <option value="hikaru">輝</option>
+                    <option value="kana">佳奈</option>
+                    <option value="ryuya">龍也</option>
+                    <option value="kai">海</option>
+                    <!-- <option value="all">全員</option> -->
+                </select>
+            </p>
+            <input type="submit" value="送信" class="sousin">
+        </form>
+        {%if menber and money1 and money2 and human%}
+        <table align="center" class="table" border="1">
+            <tr>
+                <td colspan="2" align="center" class="table1">{{menber}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[0]}}</td>
+                <td align="center" class="table2">￥{{money2[0] - money1[0]}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[1]}}</td>
+                <td align="center" class="table2">￥{{money2[1] - money1[1]}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[2]}}</td>
+                <td align="center" class="table2">￥{{money2[2] - money1[2]}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[3]}}</td>
+                <td align="center" class="table2">￥{{money2[3] - money1[3]}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[4]}}</td>
+                <td align="center" class="table2">￥{{money2[4] - money1[4]}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[5]}}</td>
+                <td align="center" class="table2">￥{{money2[5] - money1[5]}}</td>
+            </tr>
+            <tr>
+                <td align="center" class="table2">{{human[6]}}</td>
+                <td align="center" class="table2">￥{{money2[6] - money1[6]}}</td>
+            </tr>
+        </table>
+        {%else%}        
+        {%endif%}
+
+        {%if all %}
+
+        {%else%}        
+        {%endif%}
+        <br>
+        <a href='/' class="back">戻る<br></a>
+    </body>
+</html>

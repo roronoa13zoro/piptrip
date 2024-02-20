@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日程</title>
+	</head>
+
+    <style>
+        .example{
+            font-size: 170%;
+            border-spacing: 10px;
+            display: flex;
+            flex-flow: column;
+        }
+        .example1{
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .end{
+            font-size: 200%;
+            position: absolute;
+            right: 10pt; 
+            bottom: 20pt;
+        }
+        .example2{
+            font-size: 170%;
+        }
+        .example3{
+            font-size: 300%;
+            text-align: rigth;
+        }
+        .botton{
+            font-size: 100%;
+            width:  150pt;
+            height: 50pt;
+        }
+        .center{
+            text-align:center;
+        }
+        .fontWhite50{
+            color: #ffff;
+            width:  50pt;
+        }
+        .fontWhite{
+            color: #ffff;
+        }
+    </style>
+    <body>
+        <div class="example2"  align="center">
+            <div class="center">
+                <h1>スキー旅行🎿ぴっぴのルームツアー</h1>
+                <div class="example1">
+                    <h1>🏂日程</h1>
+                    <a href='/' onClick="keikoku()" class="end">戻る<br></a>
+                </div>
+            </div>
+                <input type="button" value="1日目" class="botton"
+                    onclick="document.getElementById('1nitime').style.display = 'inline';
+                            document.getElementById('2nitime').style.display = 'none';
+                            document.getElementById('3nitime').style.display = 'none';
+                            document.getElementById('1nitime').style.fontSize = '180%';">
+                <input type="button" value="2日目" class="botton"
+                    onclick="document.getElementById('1nitime').style.display = 'none';
+                            document.getElementById('2nitime').style.display = 'inline';
+                            document.getElementById('3nitime').style.display = 'none';
+                            document.getElementById('2nitime').style.fontSize = '180%';">
+                <input type="button" value="3日目" class="botton"
+                    onclick="document.getElementById('1nitime').style.display = 'none';
+                            document.getElementById('2nitime').style.display = 'none';
+                            document.getElementById('3nitime').style.display = 'inline';
+                            document.getElementById('3nitime').style.fontSize = '180%';">
+                            
+                <input type="button" value="全日程" class="botton"
+                    onclick="document.getElementById('1nitime').style.display = 'inline';
+                            document.getElementById('2nitime').style.display = 'inline';
+                            document.getElementById('3nitime').style.display = 'inline';
+                            document.getElementById('1nitime').style.fontSize = '100%';
+                            document.getElementById('2nitime').style.fontSize = '100%';
+                            document.getElementById('3nitime').style.fontSize = '100%';">
+        <br><br>
+        </div>
+        <div id= 'zennittei' class="example">
+            <table id='1nitime' align="center">
+                <tr>
+                    <td class="example2" colspan="3" cellspacing="5" align="center">1日目</td>
+                </tr>
+                <tr>
+                    <td align="center">5:30</td>
+                    <td rowspan="10" class="fontWhite50"></td>
+                    <td>集合・出発</td>
+                </tr>
+                <tr>
+                    <td align="center">6:30</td>
+                    <td>那覇空港到着</td>
+                </tr>
+                <tr>
+                    <td align="center">7:35</td>
+                    <td>那覇空港発</td>
+                </tr>
+                <tr>
+                    <td align="center">9:45</td>
+                    <td>羽田空港着</td>
+                </tr>
+                <tr>
+                    <td align="center">11:00</td>
+                    <td>レンタカーを借りて山梨へ出発</td>
+                </tr>
+                <tr>
+                    <td align="center">14:00</td>
+                    <td>山梨到着</td>
+                </tr>
+                <tr>
+                    <td align="center">14:30</td>
+                    <td>ぴっぴ合流</td>
+                </tr>
+                <tr>
+                    <td align="center">15:00</td>
+                    <td>ホテルチェックイン</td>
+                </tr>
+                <tr>
+                    <td align="center">～17:00</td>
+                    <td>荷ほどき・自由時間</td>
+                </tr>
+                <tr>
+                    <td align="center">18:00</td>
+                    <td>飲み</td>
+                </tr>
+            </table>
+            <br>
+            <table id='2nitime' align="center">
+                <tr>
+                    <td class="example2" colspan="3" cellspacing="5" align="center">2日目</td>
+                </tr>
+                <tr>
+                    <td align="center">5:30</td>
+                    <td rowspan="7" class="fontWhite50"></td>
+                    <td>起床</td>
+                </tr>
+                <tr>
+                    <td align="center">6:30</td>
+                    <td>ホテル発</td>
+                </tr>
+                <tr>
+                    <td align="center">8:00</td>
+                    <td>スキーorスノボ開始</td>
+                </tr>
+                <tr>
+                    <td align="center">21:30</td>
+                    <td>スキーorスノボ終了</td>
+                </tr>
+                <tr>
+                    <td align="center">22:30</td>
+                    <td>ホテル帰宅</td>
+                </tr>
+                <tr>
+                    <td align="center">23:00～</td>
+                    <td>飲み</td>
+                </tr>
+                <tr>
+                    <td class="fontWhite">23:00～</td>
+                    <td class="fontWhite">レンタカーを借りて山梨へ出発</td>
+                </tr>
+            </table>
+            <br>
+            <table id='3nitime' align="center">
+                <tr>
+                    <td class="example2" colspan="3" cellspacing="5" align="center">3日目</td>
+                </tr>
+                <tr>
+                    <td align="center">5:30</td>
+                    <td rowspan="13" class="fontWhite50"></td>
+                    <td>起床</td>
+                </tr>
+                <tr>
+                    <td align="center">6:45</td>
+                    <td>ホテルチェックアウト</td>
+                </tr>
+                <tr>
+                    <td align="center">7:00</td>
+                    <td>ホテル発</td>
+                </tr>
+                <tr>
+                    <td align="center">8:30</td>
+                    <td>スキーorスノボ開始</td>
+                </tr>
+                <tr>
+                    <td align="center">14:00</td>
+                    <td>スキーorスノボ終了</td>
+                </tr>
+                <tr>
+                    <td align="center">15:00</td>
+                    <td>スキー場出発</td>
+                </tr>
+                <tr>
+                    <td align="center">15:00</td>
+                    <td>ぴっぴ解散</td>
+                </tr>
+                <tr>
+                    <td align="center">15:30</td>
+                    <td>山梨出発</td>
+                </tr>
+                <tr>
+                    <td align="center">18:00</td>
+                    <td>羽田空港到着</td>
+                </tr>
+                <tr>
+                    <td align="center">20:00</td>
+                    <td>羽田空港発</td>
+                </tr>
+                <tr>
+                    <td align="center">22:50</td>
+                    <td>那覇空港着</td>
+                </tr>
+                <tr>
+                    <td align="center">24:30</td>
+                    <td>帰宅</td>
+                </tr>
+                <tr>
+                    <td class="fontWhite">23:00～</td>
+                    <td class="fontWhite">レンタカーを借りて山梨へ出発</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+	
+</html>
+
